@@ -2,9 +2,11 @@
 * {
     box-sizing: border-box;
 }
-.App {
 
+html {
+    background-color: #f4f7fc;
 }
+
 
 .header {
     background: green;
@@ -27,16 +29,24 @@
 
 .modal {
     position: absolute;
-
     width: 400px;
     height: 400px;
-    background: black;
+    background:#03b57d;
     color: #fff;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
+    border-radius: 10px;
+    opacity: 90%;
+}
+
+.modal input {
+    width: 100px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #9bdbcd;
+    border-radius: 5px;
+    color: #000;
 }
 
 .mainPage {
@@ -45,6 +55,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mainPage  button {
+    margin-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    background-color: #9bdbcd;
+    border: 1px solid #9bdbcd;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.mainPage button:hover {
+    background-color: #8b8d91;
+}
+
+.mainPage h1 {
+    width: 100%;
+    background-color: #09b784;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 300;
 }
 
 .modalWrapper {
@@ -76,7 +108,34 @@
 }
 
 .todocard {
-    width: 70%;
-    border: 1px solid red;
+    width: 50%;
+    border: 1px solid #09b784;
     padding: 20px;
+    border-radius: 25px;
+    background-color: #09b784;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.todocard button {
+    margin-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    background-color: #9bdbcd;
+    border: 1px solid #9bdbcd;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.todocard button:hover {
+    background-color: #8b8d91;
+}
+
+
+.todocard h1 {
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: 10px;
 }

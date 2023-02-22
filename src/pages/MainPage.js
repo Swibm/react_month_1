@@ -44,6 +44,11 @@ const MainPage = () => {
       setCurrentTodo(todo)
     }
 
+    const handleClose = () => {
+      setIsShow(false)
+      setCurrentTodo({})
+    }
+
     const sortByDate = () => {
         const sorted = todoList.sort((a, b) => b.id - a.id) // desc
 
@@ -61,7 +66,7 @@ const MainPage = () => {
             <button onClick={sortByDate}>sort asc</button>
             <TodoList handleEdit={handleEdit} list={todoList} handleDelete={handleDelete} handleOpen={handleOpen}/>
             {isShow && (
-                <ModalWindow handleEdit={handleEdit} currentTodo={currentTodo} handleAdd={handleAdd} handleClose={() => setIsShow(false)}/>
+                <ModalWindow handleEdit={handleEdit} currentTodo={currentTodo} handleAdd={handleAdd} handleClose={handleClose}/>
                 )
             }
         </div>

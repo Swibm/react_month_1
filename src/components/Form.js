@@ -16,12 +16,15 @@ const Form = ({ handleAdd, handleEdit, handleClose, currentTodo }) => {
         })
     }
 
+    
+
     const action = () => {
         if (isEdit) {
             handleEdit(value)
             handleClose()
         } else {
             handleAdd(value)
+            handleClose()
         }
     }
 

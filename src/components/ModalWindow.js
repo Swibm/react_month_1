@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
 import Form from "./Form";
 
 const ModalWindow = ({ handleClose, handleEdit, handleAdd, currentTodo }) => {
+
+
+    
     return (
         <>
             <div className="modalWrapper" onClick={handleClose}>

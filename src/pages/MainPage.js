@@ -23,16 +23,7 @@ const MainPage = () => {
     const newTodoList = todoList.filter((item) => item.id !== id)
     setTodoList(newTodoList)
   }
-  
-    // const [count, setCount] = useState(0)
-    // useEffect(() => {
-    //   const timeoutID = setTimeout(() => {
-    //     setCount(prev => prev + 1)
-    //   }, 1000)
 
-    //   return () => {clearInterval(timeoutID)}
-    // }, [count])
-  
     const handleEdit = (data) => {
       const newTodoList = todoList.map((item) => {
         if (item.id === data.id) {
@@ -41,7 +32,7 @@ const MainPage = () => {
           return item
         }
       })
-    
+      list = newTodoList
       setTodoList(newTodoList)
     }
   
@@ -67,10 +58,10 @@ const MainPage = () => {
       let newList = []
         list.map((item) => 
         {
-          if(item.title.toLocaleLowerCase().match(value)!== null) 
+          if(item.title.toLocaleLowerCase().match(value.toLocaleLowerCase())!== null) 
           {
             newList.push(item)
-            setTodoList(newList)
+            setTodoList(newList)    
           }
         })
       }, [value])
@@ -80,7 +71,8 @@ const MainPage = () => {
             <Title size={26}>
                 Todo List
             </Title>
-            <input value={value} onChange = {(e) => setValue(e.target.value)}></input>
+            <span className="searchTitle">Search by Title</span>
+            <input className="searchInput" value={value} onChange = {(e) => setValue(e.target.value)}></input>
             <button onClick={() => setIsShow(true)}>Создать таск</button>
             <button onClick={sortByDate}>sort asc</button>
             <TodoList handleEdit={handleEdit} list={todoList} handleDelete={handleDelete} handleOpen={handleOpen}/>

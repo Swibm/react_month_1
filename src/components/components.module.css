@@ -1,0 +1,9 @@
+﻿.button {
+    font-size: 14px;
+}
+
+.buttonActive {
+    font-size: 14px;
+    border: 1px solid black;
+    color: black;
+}

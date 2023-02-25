@@ -57,6 +57,14 @@ html {
     align-items: center;
 }
 
+.mainPage .searchTitle {
+    color:#09b784;
+}
+
+.mainPage .searchInput {
+    margin-bottom: 10px;
+}
+
 .mainPage  button {
     margin-bottom: 5px;
     width: 100px;

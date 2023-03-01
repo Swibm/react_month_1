@@ -5,7 +5,9 @@ import TodoList from "../components/TodoList";
 
 let list = 
   [{ id: 1, title: 'Go to shop', description: 'Some desc'},
-   { id: 2, title: 'Buy new cars', description: 'Some desc'}
+   { id: 2, title: 'Buy new cars', description: 'Some desc'},
+   {id: 3, title: 'Go to shop', description: 'Some desc'},
+   {id: 4, title: 'Buy new cars', description: 'Some desc'}
   ]
 
 const MainPage = () => {

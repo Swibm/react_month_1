@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoCard from "./TodoCard";
 import classes from './components.module.css'
 import SumComp from "./sumComp";
 import Hoc from "./Hoc";
 
-const TodoList = ({ list, handleDelete, handleEdit, handleOpen }) => {
+const TodoList = ({ list, handleDelete, handleEdit, handleOpen, handleNextPage, handlPrevPage, page }) => {
 
     const [type, setType] = useState('asc')
 
@@ -22,31 +22,16 @@ const TodoList = ({ list, handleDelete, handleEdit, handleOpen }) => {
             }
             default: return list
         }
-    }
+    } 
 
-    const [pag, setPag] = useState(
-        {
-            limit:2,
-            offset:0
-        }
-    )
 
-    const [page, setPage] = useState(1)
 
-    const handlPrevPage = () => {
-        if(pag.offset === 1) return
-        setPag((prev) => ({...prev, offset: prev.offset - prev.limit}))
-        setPage(page - 1)
-    }
-
-    const countPages = Math.ceil(filterSort(type).length / pag.limit)
-
-    const handleNextPage = () => {
-        if(page === countPages) {return}
-        setPag((prev) => ({...prev, offset: prev.limit + prev.offset}))
-        setPage(page + 1)
-    }
-
+    // const [pag, setPag] = useState(
+    //     {
+    //         limit:2,
+    //         offset:0
+    //     }
+    // )
 
 
     return (
@@ -55,11 +40,11 @@ const TodoList = ({ list, handleDelete, handleEdit, handleOpen }) => {
             <button className={type === 'asc' ? classes.buttonActive :classes.button} onClick={() => setType('asc')}>Asc</button>
             <button className={classes.button} onClick={() => setType('desc')}>Desc</button>
             <button className={classes.button} onClick={() => setType('letter')}>By letter</button>
-            {filterSort(type).slice(pag.offset, pag.offset + pag.limit).map((item) => 
+            {filterSort(type).map((item) => 
                 <TodoCard key={item.id} todo={item} handleOpen={handleOpen} handleDelete={handleDelete}/>
             )}
             <button onClick={handlPrevPage}>Prev</button>
-            <h2> {page + ' / ' + countPages}</h2>
+            <h2> {page}</h2>
             <button onClick={handleNextPage}>Next</button>
         </div>
      );

@@ -1,5 +1,9 @@
 import React, { useCallback, useMemo, useState } from 'react'
+import { Route, Router, Routes, NavLink  } from "react-router-dom";
 import ExmMemo from './components/ExmMemo';
+import AppRouter from './common/AppRouter';
+import { routes } from './common/routeConfig';
+import Header  from "./header";
 
 import './index.css'
 import MainPage from './pages/MainPage';
@@ -27,10 +31,14 @@ function App() {
 
   return (
     <div className="App">
-      {/* <input value = {value} onChange = {(e) => setValue(e.target.value)}></input> */}
-      <MainPage/>
-      {/* <ExmMemo log = {log} amount = {amount}></ExmMemo> */}
+                <Header></Header>
+    {/* <input value = {value} onChange = {(e) => setValue(e.target.value)}></input> */}
+    {/* //   <MainPage/> */}
+    {/* //   <ExmMemo log = {log} amount = {amount}></ExmMemo> */}
+      <AppRouter/>
+
     </div>
+
   );
 }
 

@@ -7,6 +7,21 @@ html {
     background-color: #f4f7fc;
 }
 
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #9bdbcd;
+    border-radius: 5px;
+    background-color:#09b784;
+    height: 50px;    
+}
+
+.Header a {
+    margin-right: 10px;
+}
 
 .header {
     background: green;
